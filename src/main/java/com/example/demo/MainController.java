@@ -8,6 +8,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 
+import java.util.List;
+
 @Controller
 @RequestMapping(path="/demo")
 public class MainController {
@@ -34,7 +36,10 @@ public class MainController {
 
     @GetMapping(path="/all")
     public @ResponseBody Iterable< Angajat> getAllUsers() {
-        return userRepository.findAll();
+        List<Angajat> list = userRepository.findAll();
+        System.out.println(list);
+
+        return list;
     }
 
     @GetMapping(path="/allbugs")

@@ -28,4 +28,8 @@ public class Angajat {
     public void setNume(String nume) {
         this.nume = nume;
     }
+
+    public String toString(){
+        return this.getId() + " " + this.getNume();
+    }
 }

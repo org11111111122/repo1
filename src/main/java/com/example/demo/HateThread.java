@@ -12,7 +12,6 @@ public class HateThread {
     private String text;
 
     @OneToOne(cascade = CascadeType.ALL)
-    @JoinColumn(unique = true)
     private Angajat angajat;
 
 
@@ -38,5 +37,9 @@ public class HateThread {
 
     public void setAngajat(Angajat angajat) {
         this.angajat = angajat;
+    }
+
+    public String toString(){
+        return this.getText() + " angajat: " + this.getAngajat().getNume() + "\n";
     }
 }
