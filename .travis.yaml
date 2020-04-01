@@ -8,3 +8,7 @@ script:
 
 notifications:
   email: cheresioana@gmail.com
+services:
+  - mysql
+before_install:
+  - mysql -e 'CREATE DATABASE IF NOT EXISTS lab4;'
